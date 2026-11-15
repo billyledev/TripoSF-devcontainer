@@ -1,0 +1,27 @@
+{
+  "name": "tensorflow-dev-container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "runArgs": [
+    "--gpus",
+    "all"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/conda/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode,type=bind",
+  "workspaceFolder": "/home/vscode",
+  "mounts": [
+    "source=${localEnv:HOME}/Documents/AI/Models/TripoSF/vae,target=/home/vscode/TripoSF/ckpts,type=bind,readonly"
+  ]
+}
