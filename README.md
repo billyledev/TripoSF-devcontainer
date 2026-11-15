@@ -27,6 +27,5 @@ cd TripoSF && python inference.py --mesh-path "assets/examples/jacket.obj" --out
 ```bash
 docker build . -t triposf-devcontainer -f .devcontainer/Dockerfile
 docker run -it --name triposf --gpus all --mount type=bind,src=.,dst=/home/vscode --mount type=bind,src=$HOME/Path/To/My/Models/TripoSF/vae,dst=/home/vscode/TripoSF/ckpts,ro triposf-devcontainer
-pip install diso --no-build-isolation
 cd /home/vscode/TripoSF && python inference.py --mesh-path "assets/examples/jacket.obj" --output-dir "outputs/" --config "configs/TripoSFVAE_1024.yaml"
 ```
